@@ -571,6 +571,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -591,10 +592,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 3325aa38-357f-4b15-aa00-060a5634dfa6
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: StressPup - Put me out of my misery
+  organizationId: jalvarez2016
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
