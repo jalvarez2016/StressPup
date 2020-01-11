@@ -217,6 +217,8 @@ MonoBehaviour:
   inActiveCursor: {fileID: 2800000, guid: 7b89ba5f52425f34492e4a2e42708d2e, type: 3}
   cursorMode: 0
   hotspot: {x: 0, y: 0}
+  umbrellaDog: {fileID: 9182338914018617040, guid: 791d777e77fe3b44784004f64dd1d251,
+    type: 3}
 --- !u!4 &117335704
 Transform:
   m_ObjectHideFlags: 0
@@ -2285,8 +2287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180.25, y: -47.28}
-  m_SizeDelta: {x: 46.06, y: 49.73}
+  m_AnchoredPosition: {x: 180.9, y: -71.9}
+  m_SizeDelta: {x: 47.3, y: 98.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601106812
 MonoBehaviour:
@@ -2329,7 +2331,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 117335703}
-        m_MethodName: umbrella
+        m_MethodName: facts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

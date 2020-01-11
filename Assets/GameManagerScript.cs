@@ -10,6 +10,7 @@ public class GameManagerScript : MonoBehaviour
     public Texture2D inActiveCursor;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotspot = Vector2.zero;
+    public GameObject umbrellaDog;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,11 @@ public class GameManagerScript : MonoBehaviour
 
     public void umbrella(){
         Debug.Log("umbrella dog");
+        Instantiate(umbrellaDog, new Vector3(0, 0, -2f), Quaternion.identity);
+    }
+    
+    public void facts(){
+        Debug.Log("fact about how humans and dogs help each other");
     }
 
     public void changeScene(){
