@@ -11,28 +11,54 @@ public class GameManagerScript : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotspot = Vector2.zero;
     public GameObject umbrellaDog;
+    public GameObject shhBoss;
+    public GameObject coffee;
+    public GameObject portait;
+    public GameObject gameOverPainting;
+    public float timer;
+    public bool timing;
     // Start is called before the first frame update
     void Start()
     {
+        timer = 1f;
+        timing = false;
         Cursor.SetCursor(inActiveCursor,hotspot, cursorMode);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(timing){
+            timer -= Time.deltaTime;
+            if(timer <= 0){
+                GameOver();
+                timing = false;
+            }
+        }
         // Debug.Log(Input.mousePosition);
     }
 
     public void painting(){
         Debug.Log("clicked on painting");
+        portait.GetComponent<Rigidbody2D>().AddForce(new Vector3(0,-30, 0));
+        portait.GetComponent<Rigidbody2D>().gravityScale = 40;
+        Debug.Log(portait.GetComponent<Rigidbody2D>().gravityScale);
+        timing = true;
+    }
+
+    public void GameOver(){
+        Debug.Log("game over");
+        Instantiate(gameOverPainting, new Vector3(0,0,-2f), Quaternion.identity);
     }
 
     public void mug(){
         Debug.Log("clicking on the mug, written by Jason as was painting");
+        Instantiate(coffee, new Vector3(0,0,-2f), Quaternion.identity);
     }
 
     public void face(){
         Debug.Log("Clicked on the bosses face, you know the painting");
+        Instantiate(shhBoss, new Vector3(0, 0, -2f), Quaternion.identity);
     }
 
     public void umbrella(){
