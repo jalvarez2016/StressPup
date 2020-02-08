@@ -12,6 +12,16 @@ public class CommuneScript : MonoBehaviour
     public GameObject glassdoorsOutside;
     public TextMeshProUGUI textBox;
     private Vector3 balconySpawn;
+    [TextArea(2,3)]
+    public string[] emply1Dialogue;
+    [TextArea(2,3)]
+    public string[] emply2Dialogue;
+    [TextArea(2,3)]
+    public string[] emply3Dialogue;
+    [TextArea(2,3)]
+    public string[] emply4Dialogue;
+    [TextArea(2,3)]
+    public string[] dogFacts;
     // Start is called before the first frame update
     void Start()
     {
