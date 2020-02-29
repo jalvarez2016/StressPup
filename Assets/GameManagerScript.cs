@@ -15,6 +15,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject coffee;
     public GameObject portait;
     public GameObject gameOverPainting;
+    public GameObject potion;
     public float timer;
     public bool timing;
     // Start is called before the first frame update
@@ -23,11 +24,19 @@ public class GameManagerScript : MonoBehaviour
         timer = 1f;
         timing = false;
         Cursor.SetCursor(inActiveCursor,hotspot, cursorMode);
+        Debug.Log(SavedVariables.potion);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        if(SavedVariables.potion){
+            Instantiate(potion, new Vector3(0,-.13f,-3f), Quaternion.identity);
+            Color color = GameObject.Find("potion").GetComponent<MeshRenderer>().material.color ;
+            color.a -= Time.deltaTime * .01f;
+            this.GetComponent<MeshRenderer>().material.color = color ;
+        }
         if(timing){
             timer -= Time.deltaTime;
             if(timer <= 0){

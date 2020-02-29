@@ -11,7 +11,7 @@ public class playerMovementScript : MonoBehaviour
     private Vector3 balconySpawn;
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name.Contains("OfficeBackground") || other.gameObject.name.Contains("Painting"))
+        if (other.gameObject.name.Contains("OfficeBackground") || other.gameObject.name.Contains("Painting") || other.gameObject.name.Contains("Desk"))
         {
             Debug.Log("hitting floor");
                 hasJumped= true;

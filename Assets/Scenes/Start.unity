@@ -776,6 +776,13 @@ MonoBehaviour:
   inActiveCursor: {fileID: 2800000, guid: 7b89ba5f52425f34492e4a2e42708d2e, type: 3}
   cursorMode: 0
   hotspot: {x: 0, y: 0}
+  umbrellaDog: {fileID: 0}
+  shhBoss: {fileID: 0}
+  coffee: {fileID: 0}
+  portait: {fileID: 0}
+  gameOverPainting: {fileID: 0}
+  timer: 0
+  timing: 0
 --- !u!4 &1900796163
 Transform:
   m_ObjectHideFlags: 0
@@ -868,7 +875,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1975613775}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900796162}
+        m_MethodName: changeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1975613775
 MonoBehaviour:
   m_ObjectHideFlags: 0

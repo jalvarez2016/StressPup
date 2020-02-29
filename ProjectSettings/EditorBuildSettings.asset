@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Office Scene.unity
     guid: dd100a57230436e419e66503b7c1e14f
+  - enabled: 1
+    path: Assets/Scenes/OfficeCommune Scene.unity
+    guid: 6e548580debc65143a3754af0b2dd2de
   m_configObjects: {}
