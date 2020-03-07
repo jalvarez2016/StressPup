@@ -224,10 +224,15 @@ MonoBehaviour:
   portait: {fileID: 958641252}
   gameOverPainting: {fileID: 2314975834842257693, guid: 33ea788683a0e94448001ede6df43432,
     type: 3}
+  Godog: {fileID: 4360095538443828312, guid: 0c9c704af530adf40890f25c099c091e, type: 3}
   potion: {fileID: 5327850067946431484, guid: d490db8655043f448ad1c5ee483c5c39, type: 3}
   textBox: {fileID: 543224160}
+  Title: {fileID: 0}
+  Settings: {fileID: 0}
   timer: 0
   timing: 0
+  secTimer: 0
+  secTiming: 0
   bossSetup:
   - 'You: Hi, I''m dog and that''s my owner (the one in the blue woof). Push space
     bar to continue ...'

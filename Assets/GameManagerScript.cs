@@ -16,12 +16,16 @@ public class GameManagerScript : MonoBehaviour
     public GameObject coffee;
     public GameObject portait;
     public GameObject gameOverPainting;
+    public GameObject Godog;
     public GameObject potion;
     public TextMeshProUGUI textBox;
     public GameObject Title;
     public GameObject Settings;
     public float timer;
     public bool timing;
+    public float secTimer;
+    public bool secTiming;
+    public bool once;
     [TextArea(2,5)]
     public string[] bossSetup;
     // Start is called before the first frame update
@@ -29,6 +33,9 @@ public class GameManagerScript : MonoBehaviour
     {
         timer = 1f;
         timing = false;
+        secTimer = 2f;
+        secTiming = false;
+        once = true;
         Cursor.SetCursor(inActiveCursor,hotspot, cursorMode);
         Debug.Log(SavedVariables.potion);
     }
@@ -37,11 +44,9 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         
-        if(SavedVariables.potion){
+        if(SavedVariables.potion && !secTiming){
             Instantiate(potion, new Vector3(0,-.13f,-3f), Quaternion.identity);
-            Color color = GameObject.Find("potion").GetComponent<MeshRenderer>().material.color ;
-            color.a -= Time.deltaTime * .01f;
-            this.GetComponent<MeshRenderer>().material.color = color ;
+            secTiming = true;
         }
         if(timing){
             timer -= Time.deltaTime;
@@ -50,12 +55,33 @@ public class GameManagerScript : MonoBehaviour
                 timing = false;
             }
         }
+        if(secTiming && once){
+            Debug.Log("check one");
+            secTimer -= Time.deltaTime;
+            if(secTimer<=0){
+                Debug.Log("check two");
+                Instantiate(Godog, new Vector3(0, 0, -2f), Quaternion.identity);
+                Destroy(GameObject.Find("Potion(Clone)"));
+                changeText("Boss: There is no greater joy in this life than the relation between human and dog. Join us in holy Wallis Annenberg Petspace...");
+                once = false;
+            }
+        }
     }
     
     void changeText(string newTxt)
     {
         Debug.Log(newTxt);
-        textBox.GetComponent<TextMeshProUGUI>().text = newTxt;
+        if(!SavedVariables.translate){
+            int newNumber = Random.Range(2,20);
+            string woof = "Woof ";
+            for(int i=0; i<newNumber; i++){
+                //meant to make a random number of woofs appear in the textbox
+                woof = woof+"woof ";
+            }
+            textBox.GetComponent<TextMeshProUGUI>().text = woof;
+        } else {
+            textBox.GetComponent<TextMeshProUGUI>().text = newTxt;
+        }
     }
     public void painting(){
         Debug.Log("clicked on painting");

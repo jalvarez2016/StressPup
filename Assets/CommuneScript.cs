@@ -132,7 +132,17 @@ public class CommuneScript : MonoBehaviour
     void changeText(string newTxt)
     {
         Debug.Log(newTxt);
-        textBox.GetComponent<TextMeshProUGUI>().text = newTxt;
+        if(!SavedVariables.translate){
+            int newNumber = Random.Range(2,20);
+            string woof = "Woof ";
+            for(int i=0; i<newNumber; i++){
+                //meant to make a random number of woofs appear in the textbox
+                woof = woof+"woof ";
+            }
+            textBox.GetComponent<TextMeshProUGUI>().text = woof;
+        } else {
+            textBox.GetComponent<TextMeshProUGUI>().text = newTxt;
+        }
     }
 
     void teleport(Vector3 newPos)
