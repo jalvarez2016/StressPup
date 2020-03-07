@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class CommuneScript : MonoBehaviour
 {
-    
-
     public Vector3 paintingPos;
     public Vector3 BossDoor;
     public GameObject glassdoorsInside;
