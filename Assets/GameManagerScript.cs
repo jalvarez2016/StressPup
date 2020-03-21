@@ -38,6 +38,7 @@ public class GameManagerScript : MonoBehaviour
         once = true;
         Cursor.SetCursor(inActiveCursor,hotspot, cursorMode);
         Debug.Log(SavedVariables.potion);
+        changeText("You: Hello, I am dog, and that is my owner. He's in the middle of being fired. As a dogge, it is my responsibility to reduce the stress of my owner and do that I shall! Try clicking on things or tell my owner to leave the room.");
     }
 
     // Update is called once per frame

@@ -233,6 +233,7 @@ MonoBehaviour:
   timing: 0
   secTimer: 0
   secTiming: 0
+  once: 0
   bossSetup:
   - 'You: Hi, I''m dog and that''s my owner (the one in the blue woof). Push space
     bar to continue ...'
@@ -1868,7 +1869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3647059}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
