@@ -805,8 +805,17 @@ MonoBehaviour:
   coffee: {fileID: 0}
   portait: {fileID: 0}
   gameOverPainting: {fileID: 0}
+  Godog: {fileID: 0}
+  potion: {fileID: 0}
+  textBox: {fileID: 0}
+  Title: {fileID: 0}
+  Settings: {fileID: 0}
   timer: 0
   timing: 0
+  secTimer: 0
+  secTiming: 0
+  once: 0
+  bossSetup: []
 --- !u!4 &1653504873
 Transform:
   m_ObjectHideFlags: 0
@@ -869,10 +878,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

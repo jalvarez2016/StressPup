@@ -16,6 +16,7 @@ public class playerMovementScript : MonoBehaviour
         {
             Debug.Log("hitting floor");
                 hasJumped= true;
+                SavedVariables.jumped = true;
         }
     }
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class playerMovementScript : MonoBehaviour
         //use this position to teleport player to balcony when they interact with the glassdoors
         balconySpawn = new Vector3(-2.04f, -25.47f, -2);
         hasJumped = true;
+        SavedVariables.jumped = true;
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class playerMovementScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W) && hasJumped){
             GetComponent<Rigidbody2D>().AddForce(jumpForce);
             hasJumped= false;
+            SavedVariables.jumped = false;
             Owner.SetBool("Jump",true);
         } else if(Input.GetKeyUp(KeyCode.W)){
             Owner.SetBool("Jump", false);
