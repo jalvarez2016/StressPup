@@ -21,6 +21,10 @@ public class GameManagerScript : MonoBehaviour
     public TextMeshProUGUI textBox;
     public GameObject Title;
     public GameObject Settings;
+    public GameObject Mug;
+    public GameObject Face;
+    public GameObject God;
+    public GameObject Umbrella;
     public float timer;
     public bool timing;
     public float secTimer;
@@ -44,6 +48,35 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        string c_Scene = SceneManager.GetActiveScene().name;
+        if(SavedVariables.mug){
+            Mug.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
+                SceneManager.LoadScene("LevelSelect");
+            }
+        }
+        if(SavedVariables.face){
+            Face.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
+                SceneManager.LoadScene("LevelSelect");
+            }
+        }
+        if(SavedVariables.god){
+            God.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
+                SceneManager.LoadScene("LevelSelect");
+            }
+        }
+        if(SavedVariables.umbrella){
+            Umbrella.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
+                SceneManager.LoadScene("LevelSelect");
+            }
+        }
+        if(SavedVariables.gameover && Input.GetKeyDown(KeyCode.Space)){
+            // Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene("LevelSelect");
+        }
         
         if(SavedVariables.potion && !secTiming){
             Instantiate(potion, new Vector3(0,-.13f,-3f), Quaternion.identity);
@@ -65,6 +98,7 @@ public class GameManagerScript : MonoBehaviour
                 Destroy(GameObject.Find("Potion(Clone)"));
                 changeText("Boss: There is no greater joy in this life than the relation between human and dog. Join us in holy Wallis Annenberg Petspace...");
                 once = false;
+                SavedVariables.god = true;
             }
         }
     }
@@ -89,31 +123,40 @@ public class GameManagerScript : MonoBehaviour
         portait.GetComponent<Rigidbody2D>().AddForce(new Vector3(0,-30, 0));
         portait.GetComponent<Rigidbody2D>().gravityScale = 40;
         Debug.Log(portait.GetComponent<Rigidbody2D>().gravityScale);
-        changeText("Boss: HOW DARE YOU KNOW DOWN MY PAINTING! yOUR'RE FIRED!!!");
+        changeText("Boss: HOW DARE YOU KNOW DOWN MY PAINTING! YOUR'RE FIRED!!! \n You: Too bad, push SPACE to try again!");
         timing = true;
     }
 
     public void GameOver(){
         Debug.Log("game over");
         Instantiate(gameOverPainting, new Vector3(0,0,-2f), Quaternion.identity);
+        // Debug.Log(GameObject.FindGameObjectsWithTag("Btn"));
+        // GameObject.FindGameObjectsWithTag("Btn").SetActive(false);
+        foreach (GameObject buton in GameObject.FindGameObjectsWithTag("Btn") ){
+            buton.SetActive(false);
+        }
+        SavedVariables.gameover =true;
     }
 
     public void mug(){
         Debug.Log("clicking on the mug, written by Jason as was painting");
         Instantiate(coffee, new Vector3(0,0,-2f), Quaternion.identity);
         changeText("Boss: Thank you so much, if your dog hadn't nocked over my coffee I would've made the seconf worst mistake in my life. The first one would have been firing you. :) ");
+        SavedVariables.mug = true;
     }
 
     public void face(){
         Debug.Log("Clicked on the bosses face, you know the painting");
         Instantiate(shhBoss, new Vector3(0, 0, -2f), Quaternion.identity);
         changeText("You: Shhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh DON'T FIRE HIM hhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+        SavedVariables.face = true;
     }
 
     public void umbrella(){
         Debug.Log("umbrella dog");
         changeText("Owner: Hey how about you relieve some stress that you clearly have, as you're in the middle of laying off a valueable worker, by checking out some pictures of my dog with an umbrella!");
         Instantiate(umbrellaDog, new Vector3(0, 0, -2f), Quaternion.identity);
+        SavedVariables.umbrella = true;
     }
     
     public void facts(){
