@@ -202,6 +202,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1653504872}
+        m_MethodName: restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &58947909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1038,10 @@ MonoBehaviour:
   textBox: {fileID: 0}
   Title: {fileID: 0}
   Settings: {fileID: 0}
+  Mug: {fileID: 865591607}
+  Face: {fileID: 1176164225}
+  God: {fileID: 2105054431}
+  Umbrella: {fileID: 398754241}
   timer: 0
   timing: 0
   secTimer: 0

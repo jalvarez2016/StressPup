@@ -48,31 +48,29 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SavedVariables.gameover){
+            foreach (GameObject buton in GameObject.FindGameObjectsWithTag("Btn") ){
+                buton.SetActive(false);
+            }
+        }
         string c_Scene = SceneManager.GetActiveScene().name;
-        if(SavedVariables.mug){
-            Mug.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
-                SceneManager.LoadScene("LevelSelect");
+        if(c_Scene == "LevelSelect"){
+            
+            if(SavedVariables.mug){
+                Mug.SetActive(true);
             }
-        }
-        if(SavedVariables.face){
-            Face.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
-                SceneManager.LoadScene("LevelSelect");
+            if(SavedVariables.face){
+                Face.SetActive(true);
             }
-        }
-        if(SavedVariables.god){
-            God.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
-                SceneManager.LoadScene("LevelSelect");
+            if(SavedVariables.god){
+                God.SetActive(true);
             }
-        }
-        if(SavedVariables.umbrella){
-            Umbrella.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Space) && c_Scene != "OfficeCommune Scene"){
-                SceneManager.LoadScene("LevelSelect");
+            if(SavedVariables.umbrella){
+                Umbrella.SetActive(true);
             }
+
         }
+
         if(SavedVariables.gameover && Input.GetKeyDown(KeyCode.Space)){
             // Application.LoadLevel(Application.loadedLevel);
             SceneManager.LoadScene("LevelSelect");
@@ -99,6 +97,7 @@ public class GameManagerScript : MonoBehaviour
                 changeText("Boss: There is no greater joy in this life than the relation between human and dog. Join us in holy Wallis Annenberg Petspace...");
                 once = false;
                 SavedVariables.god = true;
+                SavedVariables.gameover = true;
             }
         }
     }
@@ -138,11 +137,16 @@ public class GameManagerScript : MonoBehaviour
         SavedVariables.gameover =true;
     }
 
+    public void restart(){
+        SavedVariables.gameover = false;
+    }
+
     public void mug(){
         Debug.Log("clicking on the mug, written by Jason as was painting");
         Instantiate(coffee, new Vector3(0,0,-2f), Quaternion.identity);
         changeText("Boss: Thank you so much, if your dog hadn't nocked over my coffee I would've made the seconf worst mistake in my life. The first one would have been firing you. :) ");
         SavedVariables.mug = true;
+        SavedVariables.gameover = true;
     }
 
     public void face(){
@@ -150,6 +154,7 @@ public class GameManagerScript : MonoBehaviour
         Instantiate(shhBoss, new Vector3(0, 0, -2f), Quaternion.identity);
         changeText("You: Shhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh DON'T FIRE HIM hhhhhhhhhhhhhhhhhhhhhhhhhhhh");
         SavedVariables.face = true;
+        SavedVariables.gameover = true;
     }
 
     public void umbrella(){
@@ -157,6 +162,7 @@ public class GameManagerScript : MonoBehaviour
         changeText("Owner: Hey how about you relieve some stress that you clearly have, as you're in the middle of laying off a valueable worker, by checking out some pictures of my dog with an umbrella!");
         Instantiate(umbrellaDog, new Vector3(0, 0, -2f), Quaternion.identity);
         SavedVariables.umbrella = true;
+        SavedVariables.gameover = true;
     }
     
     public void facts(){
