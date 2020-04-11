@@ -25,6 +25,8 @@ public class GameManagerScript : MonoBehaviour
     public GameObject Face;
     public GameObject God;
     public GameObject Umbrella;
+    public GameObject canvas;
+    public GameObject video;
     public float timer;
     public bool timing;
     public float secTimer;
@@ -197,6 +199,10 @@ public class GameManagerScript : MonoBehaviour
     public void changeScene(){
         var scene = SceneManager.GetActiveScene();
         Debug.Log("Active Scene is '" + scene.buildIndex + "'.");
+        // if(scene.buildIndex == 1){
+        //     canvas.SetActive(false);
+        //     video.GetComponent<VideoPlayer>.Play();
+        // }
         SceneManager.LoadScene(scene.buildIndex + 1);
     }
 }
