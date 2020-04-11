@@ -139,6 +139,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void restart(){
         SavedVariables.gameover = false;
+        SavedVariables.potion = false;
     }
 
     public void mug(){

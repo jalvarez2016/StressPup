@@ -6857,7 +6857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You: Dogs help people. People help dogs. Woof woof.'
+  m_text: You are now playing as the owner...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6926,10 +6926,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1618892067}
-    characterCount: 51
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 8
-    wordCount: 9
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -7232,13 +7232,11 @@ MonoBehaviour:
     enough.'
   - 'Dude 1: I wish I was a dog, then I wouldn''t be so stressed out.'
   - 'Dude 1: I wish I had a dog.'
-  - 'Dude 1: Can you please stop flinging around the painting.
-
-    It''s REALLY ANNOYING to put back up.'
+  - 'Dude 1: Might not wanna mess with that painting, it looks loose'
   emply2Dialogue:
   - 'Dude 2: In case you can''t read my shirt, it says Games for change. '
   - 'Dude 2: If you like this game, you might wanna look at the creators github. They
-    go by jalvarez2016, AGarciaNY and INSERT HERE LATER(daquan.griffith.sia@gmail.com).'
+    go by jalvarez2016, AGarciaNY and FORGOTTOASK(daquan.griffith.sia@gmail.com).'
   emply3Dialogue:
   - 'Wizard: IM AM NOT AN ALIEN. Just wanted to preface that.'
   - 'Wizard: Congrats on finding me. I shall reward you with a potion said to provide

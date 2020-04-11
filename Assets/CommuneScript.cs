@@ -42,6 +42,7 @@ public class CommuneScript : MonoBehaviour
         crtDialogue.Add(0);
         talking = false;
         magic = false;
+        changeText("Walk around and press space to jump in this area");
     }
 
     // Update is called once per frame
@@ -131,12 +132,18 @@ public class CommuneScript : MonoBehaviour
 
     void changeText(string newTxt)
     {
-        Debug.Log(newTxt);
+        // Debug.Log(newTxt);
         if(!SavedVariables.translate){
-            int newNumber = Random.Range(2,20);
+            int newNumber = newTxt.Length;
+            int total = 1;
+            for(int x=0;x<newNumber;x++){
+                if(newTxt[x] == ' ' || newTxt[x]=='\n' || newTxt[x]=='\t'){
+                    total++;
+                }
+            }
             string woof = "Woof ";
-            for(int i=0; i<newNumber; i++){
-                //meant to make a random number of woofs appear in the textbox
+            for(int i=0; i<total; i++){
+                //meant to make the number words into woofs appear in the textbox
                 woof = woof+"woof ";
             }
             textBox.GetComponent<TextMeshProUGUI>().text = woof;
