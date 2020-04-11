@@ -42,7 +42,7 @@ public class CommuneScript : MonoBehaviour
         crtDialogue.Add(0);
         talking = false;
         magic = false;
-        changeText("Walk around and press space to jump in this area");
+        changeText("Walk around with wasd and press space to talk in this area");
     }
 
     // Update is called once per frame

@@ -32,6 +32,7 @@ public class GameManagerScript : MonoBehaviour
     public bool once;
     [TextArea(2,5)]
     public string[] bossSetup;
+    int x=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,12 +43,16 @@ public class GameManagerScript : MonoBehaviour
         once = true;
         Cursor.SetCursor(inActiveCursor,hotspot, cursorMode);
         Debug.Log(SavedVariables.potion);
-        changeText("You: Hello, I am dog, and that is my owner. He's in the middle of being fired. As a dogge, it is my responsibility to reduce the stress of my owner and do that I shall! Try clicking on things or tell my owner to leave the room.");
+        changeText(bossSetup[x]);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space)){
+            x++;
+            changeText(bossSetup[x]);
+        }
         if(SavedVariables.gameover){
             foreach (GameObject buton in GameObject.FindGameObjectsWithTag("Btn") ){
                 buton.SetActive(false);
@@ -145,7 +150,7 @@ public class GameManagerScript : MonoBehaviour
     public void mug(){
         Debug.Log("clicking on the mug, written by Jason as was painting");
         Instantiate(coffee, new Vector3(0,0,-2f), Quaternion.identity);
-        changeText("Boss: Thank you so much, if your dog hadn't nocked over my coffee I would've made the seconf worst mistake in my life. The first one would have been firing you. :) ");
+        changeText("Boss: Thank you so much, if your dog hadn't knocked over my coffee it would have me on the floor. Damn, that near death experience is making me rethink this whole scnenario. You know what, you're not fired. You're getting a promotion!");
         SavedVariables.mug = true;
         SavedVariables.gameover = true;
     }

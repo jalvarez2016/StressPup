@@ -265,14 +265,19 @@ MonoBehaviour:
   textBox: {fileID: 543224160}
   Title: {fileID: 0}
   Settings: {fileID: 0}
+  Mug: {fileID: 0}
+  Face: {fileID: 0}
+  God: {fileID: 0}
+  Umbrella: {fileID: 0}
   timer: 0
   timing: 0
   secTimer: 0
   secTiming: 0
   once: 0
   bossSetup:
-  - 'You: Hi, I''m dog and that''s my owner (the one in the blue woof). Push space
-    bar to continue ...'
+  - 'You: Hello, I am dog, and that is my owner. He''s in the middle of being fired.
+    As a dogge, it is my responsibility to reduce the stress of my owner and do that
+    I shall! Try clicking on things or tell my owner to leave the room.'
   - 'You: He just got called into his bosses office and his boss does not look happy.'
   - 'Boss: I''m gonna be honest with you, I''m unbelieveably stressed out from the
     amount of slack I''ve been picking up from EMPLOYEE #3.'
