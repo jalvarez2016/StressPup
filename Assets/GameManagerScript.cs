@@ -101,7 +101,7 @@ public class GameManagerScript : MonoBehaviour
                 Debug.Log("check two");
                 Instantiate(Godog, new Vector3(0, 0, -2f), Quaternion.identity);
                 Destroy(GameObject.Find("Potion(Clone)"));
-                changeText("Boss: There is no greater joy in this life than the relation between human and dog. Join us in holy Wallis Annenberg Petspace...");
+                changeText("Boss: There is no greater joy in this life than the relation between human and dog. Join us in holy Wallis Annenberg Petspace... Push space.");
                 once = false;
                 SavedVariables.god = true;
                 SavedVariables.gameover = true;
@@ -152,7 +152,7 @@ public class GameManagerScript : MonoBehaviour
     public void mug(){
         Debug.Log("clicking on the mug, written by Jason as was painting");
         Instantiate(coffee, new Vector3(0,0,-2f), Quaternion.identity);
-        changeText("Boss: Thank you so much, if your dog hadn't knocked over my coffee it would have me on the floor. Damn, that near death experience is making me rethink this whole scnenario. You know what, you're not fired. You're getting a promotion!");
+        changeText("Boss: Thank you so much, if your dog hadn't knocked over my coffee it would have me on the floor. Damn, that near death experience is making me rethink this whole scnenario. You know what, you're not fired. You're getting a promotion! Push space to continue.");
         SavedVariables.mug = true;
         SavedVariables.gameover = true;
     }
@@ -160,14 +160,14 @@ public class GameManagerScript : MonoBehaviour
     public void face(){
         Debug.Log("Clicked on the bosses face, you know the painting");
         Instantiate(shhBoss, new Vector3(0, 0, -2f), Quaternion.identity);
-        changeText("You: Shhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh DON'T FIRE HIM hhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+        changeText("You: Shhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh DON'T FIRE HIM hhhhhhhhhhhhhhhhhhhhhhhhhhhh. Push space to continue.");
         SavedVariables.face = true;
         SavedVariables.gameover = true;
     }
 
     public void umbrella(){
         Debug.Log("umbrella dog");
-        changeText("Owner: Hey how about you relieve some stress that you clearly have, as you're in the middle of laying off a valueable worker, by checking out some pictures of my dog with an umbrella!");
+        changeText("Owner: Hey how about you relieve some stress that you clearly have, as you're in the middle of laying off a valueable worker, by checking out some pictures of my dog with an umbrella! Push space to continue.");
         Instantiate(umbrellaDog, new Vector3(0, 0, -2f), Quaternion.identity);
         SavedVariables.umbrella = true;
         SavedVariables.gameover = true;
@@ -175,7 +175,7 @@ public class GameManagerScript : MonoBehaviour
     
     public void facts(){
         Debug.Log("fact about how humans and dogs help each other");
-        changeText("FACT: Dogs provide people with companionship to fight stress, and people provide dogs with unlimited happiness (like when you come home from school or work, just like at your dogs tail go!)!");
+        changeText("FACT: Dogs provide people with companionship to fight stress, and people provide dogs with unlimited happiness (like when you come home from school or work, just like at your dogs tail go!)! Push space to continue.");
     }
 
     public void settingPage(){
